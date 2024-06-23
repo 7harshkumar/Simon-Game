@@ -109,23 +109,67 @@ body{
     transition: background 0.5s ease;
 }
 
-.container:hover {
-    background: radial-gradient(circle at center, #8a2be2, #4b0082, #2c1d3c, #4b0082, #8a2be2);
+.container button {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    font-size: 18px; /* Font size of 18 pixels */
+    border: none; /* No border */
+    outline: none; /* No outline when focused */
+    padding: 12px 24px; /* Padding of 12 pixels top and bottom, 24 pixels left and right */
+    cursor: pointer; /* Cursor changes to pointer on hover, indicating it's clickable */
+    border-radius: 5px; /* Rounded corners with a radius of 5 pixels */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Initially no shadow */
 }
+
+.container button:before,
+.container button:after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.container button:hover:before,
+.container button:hover:after {
+    width: 300%;
+    height: 300%;
+    opacity: 0;
+}
+
+.container button:hover {
+    background-color: #45a049; /* Darker green background color on hover */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Slight glowing effect on hover */
+}
+
 
 .hide{
     display: none;
 }
 
-.container button{
-    background-color: #fff;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+.container button {
+    background-color: #4CAF50; 
+    color: white; 
+    font-size: 18px; 
+    border: none; 
+    outline: none; 
+    padding: 12px 24px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
 }
+
+.container button:hover {
+    background-color: #45a049; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
 
 .container p{
     font-size: 32px;
